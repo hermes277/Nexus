@@ -59,3 +59,12 @@ $(document).ready(function () {
     detect_active();
   });
 });
+
+const selectElement = document.querySelector(".search-box");
+selectElement.addEventListener("change", () => {
+  const selectedOptionValue = selectElement.value;
+  if (selectedOptionValue) {
+    const job = selectedOptionValue.toLowerCase().replace(/\s/g, '_');
+    window.location.href = `Pages/jobseek/${job}_jobseek.html`;
+  }
+});
